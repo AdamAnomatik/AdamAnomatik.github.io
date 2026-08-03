@@ -1,1 +1,0 @@
-# AdamAnomatik.github.io
