@@ -628,6 +628,7 @@ h1 span {
 .support-dialog h2 { max-width: 360px; margin-bottom: 13px; font-size: 30px; line-height: 1.1; letter-spacing: -.04em; }
 .support-dialog__description { margin-bottom: 26px; color: var(--muted-strong); }
 
+.donation-provider-stack { display: grid; gap: 14px; }
 .donation-provider {
   padding: 19px;
   border: 1px solid rgba(56, 200, 255, .24);
