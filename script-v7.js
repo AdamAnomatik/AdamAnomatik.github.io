@@ -1,4 +1,4 @@
-/* EmDiSoftware main script build v8 */
+/* EmDiSoftware main script build v9 */
 (() => {
   const storageKey = "emdisoftware-language";
   const root = document.documentElement;

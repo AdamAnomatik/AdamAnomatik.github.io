@@ -12,11 +12,11 @@
   <title>EmDiSoftware — маленькие приложения для Windows</title>
   <meta name="description" content="EmDiSoftware предоставляет компактные приложения для Windows: Simpltask, SimplNote, SimplPlayer и SimplPage.">
   <meta name="author" content="EmDiSoftware">
-  <meta name="site-build" content="v8">
+  <meta name="site-build" content="v9">
 
   <link rel="canonical" href="https://adamanomatik.github.io/">
   <link rel="icon" type="image/png" href="./assets/favicon.png">
-  <link rel="stylesheet" href="./styles-v7.css?v=8">
+  <link rel="stylesheet" href="./styles-v7.css?v=9">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="EmDiSoftware — маленькие приложения. Понятная польза.">
@@ -56,7 +56,7 @@
       <button class="support-button" type="button" aria-haspopup="dialog" aria-controls="support-dialog">
         <span aria-hidden="true">♡</span>
         <span data-lang="ru">Поддержать</span>
-        <span data-lang="en" hidden>Support</span>
+        <span data-lang="en" hidden>Donate</span>
       </button>
 
       <button class="language-switch" type="button" aria-label="Переключить язык">
@@ -323,15 +323,16 @@
       </p>
 
       <div class="donation-provider">
-        <p class="donation-provider__title">🇷🇺 Поддержать из России</p>
+        <p class="donation-provider__title" data-lang="ru">Поддержать из России</p>
+        <p class="donation-provider__title" data-lang="en" hidden>Support from Russia</p>
         <p class="donation-provider__details">ЮMoney · 300 ₽</p>
-        <iframe src="https://yoomoney.ru/quickpay/fundraise/button?billNumber=1JLKAC78M6G.260815&amp;"
-                width="330"
-                height="50"
-                frameborder="0"
-                allowtransparency="true"
-                scrolling="no"
-                title="ЮMoney · 300 ₽"></iframe>
+        <a class="donation-button" href="https://yoomoney.ru/quickpay/fundraise/button?billNumber=1JLKAC78M6G.260815" target="_blank" rel="noopener noreferrer">
+          <span data-lang="ru">Пожертвовать · 300 ₽</span>
+          <span data-lang="en" hidden>Donate · 300 ₽</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+        <p class="donation-provider__payment-note" data-lang="ru">Оплата откроется на стороне ЮMoney.</p>
+        <p class="donation-provider__payment-note" data-lang="en" hidden>Payment will open on the YooMoney side.</p>
       </div>
 
       <p class="support-dialog__note" data-lang="ru">Спасибо за поддержку независимой разработки ❤️</p>
@@ -339,6 +340,6 @@
     </div>
   </dialog>
 
-  <script src="./script-v7.js?v=8"></script>
+  <script src="./script-v7.js?v=9"></script>
 </body>
 </html>
