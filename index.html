@@ -12,11 +12,11 @@
   <title>EmDiSoftware — маленькие приложения для Windows</title>
   <meta name="description" content="EmDiSoftware предоставляет компактные приложения для Windows: Simpltask, SimplNote, SimplPlayer и SimplPage.">
   <meta name="author" content="EmDiSoftware">
-  <meta name="site-build" content="v7">
+  <meta name="site-build" content="v8">
 
   <link rel="canonical" href="https://adamanomatik.github.io/">
   <link rel="icon" type="image/png" href="./assets/favicon.png">
-  <link rel="stylesheet" href="./styles-v7.css?v=7">
+  <link rel="stylesheet" href="./styles-v7.css?v=8">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="EmDiSoftware — маленькие приложения. Понятная польза.">
@@ -52,6 +52,12 @@
         </a>
         <a href="https://github.com/AdamAnomatik">GitHub</a>
       </nav>
+
+      <button class="support-button" type="button" aria-haspopup="dialog" aria-controls="support-dialog">
+        <span aria-hidden="true">♡</span>
+        <span data-lang="ru">Поддержать</span>
+        <span data-lang="en" hidden>Support</span>
+      </button>
 
       <button class="language-switch" type="button" aria-label="Переключить язык">
         <span data-lang-button="ru">EN</span>
@@ -298,6 +304,41 @@
     </div>
   </footer>
 
-  <script src="./script-v7.js?v=7"></script>
+  <dialog class="support-dialog" id="support-dialog" aria-labelledby="support-dialog-title">
+    <div class="support-dialog__content">
+      <button class="support-dialog__close" type="button" aria-label="Закрыть">
+        <span aria-hidden="true">×</span>
+      </button>
+
+      <p class="support-dialog__eyebrow">EmDiSoftware</p>
+      <h2 id="support-dialog-title">
+        <span data-lang="ru">Поддержать разработку</span>
+        <span data-lang="en" hidden>Support development</span>
+      </h2>
+      <p class="support-dialog__description" data-lang="ru">
+        Приложения EmDiSoftware распространяются бесплатно. Если они оказались полезны, вы можете поддержать дальнейшую разработку.
+      </p>
+      <p class="support-dialog__description" data-lang="en" hidden>
+        EmDiSoftware applications are free. If they are useful to you, you can support their continued development.
+      </p>
+
+      <div class="donation-provider">
+        <p class="donation-provider__title">🇷🇺 Поддержать из России</p>
+        <p class="donation-provider__details">ЮMoney · 300 ₽</p>
+        <iframe src="https://yoomoney.ru/quickpay/fundraise/button?billNumber=1JLKAC78M6G.260815&amp;"
+                width="330"
+                height="50"
+                frameborder="0"
+                allowtransparency="true"
+                scrolling="no"
+                title="ЮMoney · 300 ₽"></iframe>
+      </div>
+
+      <p class="support-dialog__note" data-lang="ru">Спасибо за поддержку независимой разработки ❤️</p>
+      <p class="support-dialog__note" data-lang="en" hidden>International payment option will be added soon. Thank you for supporting independent development ❤️</p>
+    </div>
+  </dialog>
+
+  <script src="./script-v7.js?v=8"></script>
 </body>
 </html>

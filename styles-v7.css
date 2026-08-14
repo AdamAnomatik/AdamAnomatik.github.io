@@ -1,4 +1,4 @@
-/* EmDiSoftware main styles build v7 */
+/* EmDiSoftware main styles build v8 */
 :root {
   --bg: #080e16;
   --bg-soft: #0d1621;
@@ -123,6 +123,34 @@ img { display: block; max-width: 100%; }
 }
 
 .language-switch:hover { border-color: var(--line-strong); }
+
+.support-button {
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 13px;
+  border: 1px solid rgba(121, 104, 242, .38);
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(56, 200, 255, .1), rgba(121, 104, 242, .13));
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 740;
+  cursor: pointer;
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.support-button > span:first-child {
+  color: var(--cyan);
+  font-size: 19px;
+  line-height: 1;
+}
+
+.support-button:hover {
+  transform: translateY(-1px);
+  border-color: rgba(56, 200, 255, .7);
+  box-shadow: 0 8px 24px rgba(73, 106, 235, .2);
+}
 
 .hero {
   position: relative;
@@ -547,6 +575,71 @@ h1 span {
   font-size: 13px;
 }
 
+.support-dialog {
+  width: min(calc(100% - 32px), 490px);
+  max-height: min(700px, calc(100vh - 32px));
+  margin: auto;
+  padding: 0;
+  overflow: auto;
+  border: 1px solid rgba(91, 155, 230, .42);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(circle at 12% 0, rgba(56, 200, 255, .12), transparent 17rem),
+    radial-gradient(circle at 100% 100%, rgba(121, 104, 242, .13), transparent 18rem),
+    var(--panel);
+  color: var(--text);
+  box-shadow: 0 28px 90px rgba(0, 0, 0, .58);
+}
+
+.support-dialog::backdrop { background: rgba(2, 7, 13, .74); backdrop-filter: blur(5px); }
+
+.support-dialog__content { position: relative; padding: 34px; }
+
+.support-dialog__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, .035);
+  color: var(--muted-strong);
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.support-dialog__close:hover { border-color: var(--line-strong); color: var(--text); }
+
+.support-dialog__eyebrow {
+  margin-bottom: 11px;
+  color: var(--cyan);
+  font-family: ui-monospace, "Cascadia Code", monospace;
+  font-size: 11px;
+  font-weight: 780;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+}
+
+.support-dialog h2 { max-width: 360px; margin-bottom: 13px; font-size: 30px; line-height: 1.1; letter-spacing: -.04em; }
+.support-dialog__description { margin-bottom: 26px; color: var(--muted-strong); }
+
+.donation-provider {
+  padding: 19px;
+  border: 1px solid rgba(56, 200, 255, .24);
+  border-radius: 16px;
+  background: rgba(5, 15, 25, .38);
+}
+
+.donation-provider__title { margin-bottom: 3px; font-size: 15px; font-weight: 760; }
+.donation-provider__details { margin-bottom: 15px; color: var(--muted); font-size: 13px; }
+.donation-provider iframe { display: block; width: min(330px, 100%); max-width: 100%; border: 0; }
+.support-dialog__note { margin: 22px 0 0; color: var(--muted); font-size: 13px; }
+
 :focus-visible {
   outline: 3px solid rgba(56, 200, 255, .58);
   outline-offset: 3px;
@@ -554,6 +647,7 @@ h1 span {
 
 @media (max-width: 980px) {
   .nav { display: none; }
+  .support-button { margin-left: auto; }
   .hero-layout { grid-template-columns: 1fr; }
   .hero-copy { max-width: 780px; }
   .splash-stage { width: min(820px, 100%); margin-inline: auto; }
@@ -565,8 +659,11 @@ h1 span {
 @media (max-width: 700px) {
   .shell { width: min(calc(100% - 28px), var(--shell)); }
   .header-inner { min-height: 66px; }
+  .header-inner { gap: 10px; }
   .brand { font-size: 17px; }
   .brand img { width: 36px; height: 36px; }
+  .support-button { width: 40px; min-width: 40px; padding: 0; justify-content: center; }
+  .support-button > span[data-lang] { display: none !important; }
   .hero { padding: 66px 0 82px; }
   h1 { font-size: clamp(43px, 14vw, 62px); }
   .hero-lead { font-size: 17px; }
@@ -585,6 +682,9 @@ h1 span {
   .final-layout { grid-template-columns: 1fr; }
   .final-layout > img { width: 92px; height: 92px; }
   .footer-links { flex-wrap: wrap; }
+  .support-dialog__content { padding: 28px 21px 24px; }
+  .support-dialog h2 { padding-right: 38px; font-size: 27px; }
+  .donation-provider { padding: 16px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
