@@ -1,8 +1,11 @@
-/* EmDiSoftware main script build v7 */
+/* EmDiSoftware main script build v8 */
 (() => {
   const storageKey = "emdisoftware-language";
   const root = document.documentElement;
   const button = document.querySelector(".language-switch");
+  const supportButton = document.querySelector(".support-button");
+  const supportDialog = document.querySelector(".support-dialog");
+  const supportCloseButton = document.querySelector(".support-dialog__close");
 
   function applyLanguage(language) {
     const active = language === "en" ? "en" : "ru";
@@ -16,6 +19,7 @@
     });
 
     root.lang = active;
+    supportCloseButton?.setAttribute("aria-label", active === "en" ? "Close" : "Закрыть");
 
     if (active === "en") {
       document.title = "EmDiSoftware — small Windows applications";
@@ -55,5 +59,19 @@
 
   button?.addEventListener("click", () => {
     applyLanguage(root.lang === "ru" ? "en" : "ru");
+  });
+
+  supportButton?.addEventListener("click", () => {
+    supportDialog?.showModal();
+  });
+
+  supportCloseButton?.addEventListener("click", () => {
+    supportDialog?.close();
+  });
+
+  supportDialog?.addEventListener("click", (event) => {
+    if (event.target === supportDialog) {
+      supportDialog.close();
+    }
   });
 })();
