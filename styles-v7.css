@@ -1,4 +1,4 @@
-/* EmDiSoftware main styles build v8 */
+/* EmDiSoftware main styles build v9 */
 :root {
   --bg: #080e16;
   --bg-soft: #0d1621;
@@ -637,7 +637,28 @@ h1 span {
 
 .donation-provider__title { margin-bottom: 3px; font-size: 15px; font-weight: 760; }
 .donation-provider__details { margin-bottom: 15px; color: var(--muted); font-size: 13px; }
-.donation-provider iframe { display: block; width: min(330px, 100%); max-width: 100%; border: 0; }
+.donation-button {
+  min-height: 48px;
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 10px 16px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #48d2ff, #5b86ff 70%, #7b6ff3);
+  color: #05101a;
+  box-shadow: 0 12px 28px rgba(50, 142, 235, .2);
+  font-size: 14px;
+  font-weight: 780;
+  text-decoration: none;
+  transition: transform 160ms ease, box-shadow 160ms ease, filter 160ms ease;
+}
+
+.donation-button:hover { transform: translateY(-1px); box-shadow: 0 16px 34px rgba(50, 142, 235, .32); filter: brightness(1.04); }
+.donation-button:focus-visible { outline-color: rgba(129, 227, 255, .9); }
+.donation-provider__payment-note { margin: 11px 0 0; color: var(--muted); font-size: 12px; text-align: center; }
 .support-dialog__note { margin: 22px 0 0; color: var(--muted); font-size: 13px; }
 
 :focus-visible {
