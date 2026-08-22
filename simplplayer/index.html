@@ -10,7 +10,7 @@
   <meta name="color-scheme" content="dark">
   <meta name="site-build" content="v8">
   <title>SimplPlayer — EmDiSoftware</title>
-  <meta name="description" content="SimplPlayer — компактный резидентный музыкальный плеер для Windows с мини-плеером, медиатекой, плейлистами и очередью.">
+  <meta name="description" content="SimplPlayer — компактный резидентный музыкальный плеер для Windows с мини-плеером, медиатекой, плейлистами, очередью и интернет-радио.">
   <link rel="canonical" href="https://adamanomatik.github.io/simplplayer/">
   <link rel="icon" type="image/png" href="../assets/favicon.png">
   <link rel="stylesheet" href="../product-v7.css?v=7">
@@ -51,18 +51,18 @@
 
           <h1>SimplPlayer</h1>
 
-          <p class="hero-description" data-lang="ru">Компактный резидентный музыкальный плеер для Windows с мини-плеером у панели задач, медиатекой, плейлистами и очередью воспроизведения.</p>
-          <p class="hero-description" data-lang="en" hidden>A compact, resident music player for Windows with a taskbar MiniPlayer, media library, playlists, and a playback queue.</p>
+          <p class="hero-description" data-lang="ru">Компактный резидентный музыкальный плеер для Windows с мини-плеером у панели задач, медиатекой, плейлистами, очередью воспроизведения и интернет-радио.</p>
+          <p class="hero-description" data-lang="en" hidden>A compact, resident music player for Windows with a taskbar MiniPlayer, media library, playlists, a playback queue, and internet radio.</p>
 
           <div class="meta-row">
             <span>Windows 10/11</span>
             <span>x64</span>
             <span>Free</span>
-            <span>1.0.0</span>
+            <span>1.1.0</span>
           </div>
 
           <div class="button-row">
-            <a class="button button-primary" href="https://github.com/AdamAnomatik/SimplPlayer-Releases/releases/latest">
+            <a class="button button-primary" href="https://github.com/AdamAnomatik/SimplPlayer-Releases/releases/download/v1.1.0/SimplPlayer-1.1.0-win-x64-setup.exe">
               <span data-lang="ru">Скачать</span>
               <span data-lang="en" hidden>Download</span>
               <span aria-hidden="true">↓</span>
@@ -106,8 +106,8 @@
             <span class="feature-code">03</span>
             <h3 data-lang="ru">Акцент по обложке трека</h3>
             <h3 data-lang="en" hidden>Cover-driven accent</h3>
-            <p data-lang="ru">Интерфейс подстраивает акцентный цвет под обложку текущего трека.</p>
-            <p data-lang="en" hidden>The interface tints its accent color to match the current track's cover art.</p>
+            <p data-lang="ru">Интерфейс подстраивает акцентный цвет под обложку текущего трека или логотип радиостанции.</p>
+            <p data-lang="en" hidden>The interface tints its accent color to match the current track's cover art — or the logo of the station you are listening to.</p>
           </article>
 
           <article class="feature-card">
@@ -157,6 +157,38 @@
             <p data-lang="ru">Плавный переход между треками: конец текущего затихает, а следующий нарастает. Длительность — 2–10 секунд. Пробел ставит на паузу и запускает воспроизведение.</p>
             <p data-lang="en" hidden>A smooth transition between tracks: the current one fades out as the next fades in, over 2–10 seconds. Space toggles play and pause.</p>
           </article>
+
+          <article class="feature-card">
+            <span class="feature-code">10</span>
+            <h3 data-lang="ru">Интернет-радио</h3>
+            <h3 data-lang="en" hidden>Internet radio</h3>
+            <p data-lang="ru">Каталог онлайн-станций с поиском и фильтром по стране. Отмечайте избранные и слушайте поток прямо в плеере.</p>
+            <p data-lang="en" hidden>An online station directory with search and a country filter. Mark favorites and stream straight from the player.</p>
+          </article>
+
+          <article class="feature-card">
+            <span class="feature-code">11</span>
+            <h3 data-lang="ru">Логотипы станций</h3>
+            <h3 data-lang="en" hidden>Station artwork</h3>
+            <p data-lang="ru">Логотипы станций показываются в каталоге, мини-плеере и уведомлении «Сейчас играет». Если логотипа нет, остаётся обычная заглушка.</p>
+            <p data-lang="en" hidden>Station logos appear in the catalog, the mini-player, and the now-playing notification. Stations without one keep the usual placeholder.</p>
+          </article>
+
+          <article class="feature-card">
+            <span class="feature-code">12</span>
+            <h3 data-lang="ru">Проверка доступности</h3>
+            <h3 data-lang="en" hidden>Live availability</h3>
+            <p data-lang="ru">SimplPlayer проверяет, работает ли станция. Временно недоступные остаются в списке, но затемняются и не запускаются — и снова становятся доступными, как только заработают.</p>
+            <p data-lang="en" hidden>SimplPlayer checks whether a station is on air. Temporarily unavailable ones stay in the list, dimmed and unplayable — and become available again as soon as they recover.</p>
+          </article>
+
+          <article class="feature-card">
+            <span class="feature-code">13</span>
+            <h3 data-lang="ru">Переключение станций</h3>
+            <h3 data-lang="en" hidden>Station navigation</h3>
+            <p data-lang="ru">Кнопки «Предыдущий» и «Следующий» переключают станции в текущем списке радио — с учётом поиска и фильтра, пропуская недоступные.</p>
+            <p data-lang="en" hidden>Previous and Next move through the stations in your current radio results — following your search and filter, and skipping unavailable ones.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -165,13 +197,13 @@
       <div class="shell">
         <div class="status-panel">
           <div>
-            <h2 data-lang="ru">Версия 1.0.0 доступна</h2>
-            <h2 data-lang="en" hidden>Version 1.0.0 is available</h2>
+            <h2 data-lang="ru">Версия 1.1.0 доступна</h2>
+            <h2 data-lang="en" hidden>Version 1.1.0 is available</h2>
             <p data-lang="ru">Установщик и контрольная сумма опубликованы в официальном release-репозитории.</p>
             <p data-lang="en" hidden>The installer and checksum are published in the official release repository.</p>
           </div>
 
-          <a class="button button-primary" href="https://github.com/AdamAnomatik/SimplPlayer-Releases/releases/latest">
+          <a class="button button-primary" href="https://github.com/AdamAnomatik/SimplPlayer-Releases/releases/tag/v1.1.0">
             <span data-lang="ru">Открыть последний релиз</span>
             <span data-lang="en" hidden>Open latest release</span>
           </a>
