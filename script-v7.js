@@ -1,4 +1,4 @@
-/* EmDiSoftware main script build v9 */
+/* EmDiSoftware main script build v10 */
 (() => {
   const storageKey = "emdisoftware-language";
   const root = document.documentElement;
@@ -25,13 +25,13 @@
       document.title = "EmDiSoftware — small Windows applications";
       document.querySelector('meta[name="description"]').setAttribute(
         "content",
-        "EmDiSoftware provides compact Windows applications: Simpltask, SimplNote, SimplPlayer, and SimplPage."
+        "EmDiSoftware provides compact Windows applications: Simpltask, SimplNote, SimplPlayer, SimplPage, SimplClip, and SimplDisk."
       );
     } else {
       document.title = "EmDiSoftware — маленькие приложения для Windows";
       document.querySelector('meta[name="description"]').setAttribute(
         "content",
-        "EmDiSoftware предоставляет компактные приложения для Windows: Simpltask, SimplNote, SimplPlayer и SimplPage."
+        "EmDiSoftware предоставляет компактные приложения для Windows: Simpltask, SimplNote, SimplPlayer, SimplPage, SimplClip и SimplDisk."
       );
     }
 
