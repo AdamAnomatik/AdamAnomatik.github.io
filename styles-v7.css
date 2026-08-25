@@ -1,4 +1,4 @@
-/* EmDiSoftware main styles build v11 */
+/* EmDiSoftware main styles build v12 */
 :root {
   --bg: #080e16;
   --bg-soft: #0d1621;
@@ -419,20 +419,11 @@ h1 span {
 }
 
 .app-card-task .app-logo-frame img,
-.app-card-note .app-logo-frame img {
+.app-card-note .app-logo-frame img,
+.app-card-clip .app-logo-frame img {
   width: 110px;
   height: 110px;
   max-width: none;
-}
-
-/* Placeholder for products that have no logo asset yet. Uses the same monospace
-   code voice as .principle-code so the frame does not read as a broken image. */
-.app-logo-monogram {
-  color: var(--muted-strong);
-  font-family: ui-monospace, "Cascadia Code", monospace;
-  font-size: 34px;
-  font-weight: 780;
-  letter-spacing: .06em;
 }
 
 .card-copy { flex: 1; }
