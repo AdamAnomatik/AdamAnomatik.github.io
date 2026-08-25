@@ -1,0 +1,1402 @@
+<!doctype html>
+<html lang="ru" style="--accent:#5aa8ff;--accent-2:#8b6cf2;">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <meta name="theme-color" content="#080e16">
+  <meta name="color-scheme" content="dark">
+  <meta name="site-build" content="v1">
+
+  <title>SimplClip — менеджер буфера обмена для Windows | EmDiSoftware</title>
+  <meta name="description" content="SimplClip — быстрый локальный менеджер истории буфера обмена для Windows: текст, ссылки, изображения и файлы, поиск, Direct Paste и настройки приватности. Версия 0.1.0 Alpha доступна для загрузки.">
+  <meta name="author" content="EmDiSoftware">
+
+  <link rel="canonical" href="https://adamanomatik.github.io/simplclip/">
+  <link rel="icon" type="image/png" href="../assets/favicon.png">
+  <link rel="stylesheet" href="../product-v7.css?v=7">
+  <link rel="stylesheet" href="./simplclip.css?v=1">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="EmDiSoftware">
+  <meta property="og:title" content="SimplClip 0.1.0 Alpha — история буфера обмена для Windows">
+  <meta property="og:description" content="Быстрая локальная история буфера обмена для Windows: текст, ссылки, изображения и файлы, поиск и Direct Paste. Версия 0.1.0 Alpha доступна для загрузки.">
+  <meta property="og:url" content="https://adamanomatik.github.io/simplclip/">
+  <meta property="og:image" content="https://adamanomatik.github.io/assets/social-preview.webp">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:locale:alternate" content="en_US">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SimplClip — Clipboard Manager for Windows">
+  <meta name="twitter:description" content="A fast, local clipboard history manager for Windows with text, image and file history, search, Direct Paste and privacy controls. Version 0.1.0 Alpha is available now.">
+  <meta name="twitter:image" content="https://adamanomatik.github.io/assets/social-preview.webp">
+</head>
+<body class="sc-body">
+  <a class="sc-skip-link" href="#main">
+    <span data-lang="ru">Перейти к содержимому</span>
+    <span data-lang="en" hidden>Skip to content</span>
+  </a>
+
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="../" aria-label="EmDiSoftware">
+        <img src="../assets/emdisoftware-logo.webp" alt="EmDiSoftware" width="42" height="42">
+        <span>EmDiSoftware</span>
+      </a>
+
+      <nav class="sc-section-nav" aria-label="Разделы страницы">
+        <a href="#features">
+          <span data-lang="ru">Возможности</span>
+          <span data-lang="en" hidden>Features</span>
+        </a>
+        <a href="#privacy">
+          <span data-lang="ru">Приватность</span>
+          <span data-lang="en" hidden>Privacy</span>
+        </a>
+        <a href="#how-it-works">
+          <span data-lang="ru">Как работает</span>
+          <span data-lang="en" hidden>How it works</span>
+        </a>
+        <a href="#pricing">
+          <span data-lang="ru">Цена</span>
+          <span data-lang="en" hidden>Pricing</span>
+        </a>
+        <a href="#faq">
+          <span data-lang="ru">Вопросы</span>
+          <span data-lang="en" hidden>FAQ</span>
+        </a>
+      </nav>
+
+      <a class="back-link" href="../">
+        <span aria-hidden="true">←</span>
+        <span data-lang="ru">Все приложения</span>
+        <span data-lang="en" hidden>All applications</span>
+      </a>
+
+      <button class="language-switch" type="button" aria-label="Переключить язык">
+        <span data-lang-button="ru">EN</span>
+        <span data-lang-button="en" hidden>RU</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- =========================== HERO =========================== -->
+    <section class="product-hero sc-hero" aria-labelledby="sc-title">
+      <div class="shell product-layout sc-hero-layout">
+        <div class="logo-stage sc-stage">
+          <span class="sc-stage-grid" aria-hidden="true"></span>
+          <span class="sc-stage-corner sc-stage-corner--tl" aria-hidden="true"></span>
+          <span class="sc-stage-corner sc-stage-corner--tr" aria-hidden="true"></span>
+          <span class="sc-stage-corner sc-stage-corner--bl" aria-hidden="true"></span>
+          <span class="sc-stage-corner sc-stage-corner--br" aria-hidden="true"></span>
+
+          <svg class="sc-stage-art" viewBox="0 0 400 400" aria-hidden="true" focusable="false">
+            <defs>
+              <linearGradient id="sc-art-stroke" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#5aa8ff" stop-opacity=".95"></stop>
+                <stop offset="100%" stop-color="#8b6cf2" stop-opacity=".34"></stop>
+              </linearGradient>
+            </defs>
+            <g fill="none" stroke="url(#sc-art-stroke)" stroke-width="1.35">
+              <rect x="96" y="86" width="208" height="228" rx="26" transform="rotate(-9 200 200)" opacity=".42"></rect>
+              <rect x="96" y="86" width="208" height="228" rx="26" transform="rotate(-4.5 200 200)" opacity=".66"></rect>
+              <path d="M262 128c24 0 24 38 0 38h-58c-32 0-32-58 0-58h48" stroke-width="2.6" stroke-linecap="round" opacity=".55"></path>
+              <circle cx="200" cy="200" r="178" opacity=".22"></circle>
+            </g>
+          </svg>
+
+          <img src="../assets/simplclip-logo.webp" alt="SimplClip" width="320" height="320">
+          <span class="sc-stage-orbit" aria-hidden="true"></span>
+        </div>
+
+        <div class="sc-hero-copy">
+          <p class="eyebrow">
+            <span data-lang="ru">Alpha 0.1.0 доступна</span>
+            <span data-lang="en" hidden>Alpha 0.1.0 available</span>
+          </p>
+
+          <h1 id="sc-title">SimplClip</h1>
+
+          <p class="sc-tagline" data-lang="ru">Быстрая локальная история буфера обмена для Windows.</p>
+          <p class="sc-tagline" data-lang="en" hidden>Fast, local clipboard history for Windows.</p>
+
+          <p class="hero-description" data-lang="ru">SimplClip запоминает скопированный текст, ссылки, изображения и файлы и возвращает их по одному сочетанию клавиш. История хранится на вашем компьютере, а нужный элемент находится поиском и вставляется прямо в то приложение, где вы работаете.</p>
+          <p class="hero-description" data-lang="en" hidden>SimplClip remembers the text, links, images and files you copy and brings them back with a single shortcut. Your history stays on your PC, and you find the item you need with search and paste it straight into the application you are working in.</p>
+
+          <div class="meta-row sc-chips">
+            <span>Windows 10/11</span>
+            <span>x64</span>
+            <span>0.1.0 Alpha</span>
+            <span class="sc-chip-accent">Local-first</span>
+          </div>
+
+          <div class="button-row sc-hero-actions">
+            <a class="button button-primary" href="https://github.com/AdamAnomatik/SimplClip-Releases/releases/download/v0.1.0-alpha/SimplClip-0.1.0-alpha-win-x64-setup.exe" rel="noopener">
+              <span data-lang="ru">Скачать 0.1.0 Alpha</span>
+              <span data-lang="en" hidden>Download 0.1.0 Alpha</span>
+              <span aria-hidden="true">↓</span>
+            </a>
+            <a class="button button-secondary" href="#features">
+              <span data-lang="ru">Подробнее</span>
+              <span data-lang="en" hidden>Learn more</span>
+            </a>
+            <a class="button button-secondary" href="#pricing">
+              <span data-lang="ru">Цена</span>
+              <span data-lang="en" hidden>Pricing</span>
+            </a>
+          </div>
+
+          <p class="sc-hero-note" data-lang="ru">Windows 10/11 · x64 · установщик для текущего пользователя · 51,3 МБ</p>
+          <p class="sc-hero-note" data-lang="en" hidden>Windows 10/11 · x64 · per-user installer · 51.3 MB</p>
+
+          <aside class="sc-alpha-note" aria-labelledby="sc-alpha-note-title">
+            <span class="sc-alpha-mark" aria-hidden="true">
+              <svg viewBox="0 0 20 20" focusable="false">
+                <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                  <path d="M7.1 8.6V6.8a2.9 2.9 0 0 1 5.8 0v1.8"></path>
+                  <rect x="5.3" y="8.6" width="9.4" height="6.4" rx="2"></rect>
+                </g>
+              </svg>
+            </span>
+            <span class="sc-alpha-body">
+              <strong id="sc-alpha-note-title" data-lang="ru">Доступ к Alpha</strong>
+              <strong id="sc-alpha-note-title-en" data-lang="en" hidden>Alpha access</strong>
+              <span data-lang="ru">Для запуска SimplClip 0.1.0 Alpha сейчас требуется лицензия Alpha Tester, привязанная к Device ID компьютера. Коммерческие лицензии Personal и пробный период пока не доступны.</span>
+              <span data-lang="en" hidden>SimplClip 0.1.0 Alpha currently requires an Alpha Tester license tied to the PC Device ID. Personal licenses and the planned trial are not available yet.</span>
+            </span>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SCREENSHOT PLACEHOLDER ==================== -->
+    <section class="content-section sc-section" aria-labelledby="sc-preview-title">
+      <div class="shell">
+        <div class="section-heading">
+          <p class="section-kicker">
+            <span data-lang="ru">Интерфейс</span>
+            <span data-lang="en" hidden>Interface</span>
+          </p>
+          <h2 id="sc-preview-title">
+            <span data-lang="ru">Как это выглядит</span>
+            <span data-lang="en" hidden>What it looks like</span>
+          </h2>
+          <p data-lang="ru">Мы показываем только настоящий интерфейс. Скриншоты Alpha готовятся, поэтому это место пока остаётся зарезервированным.</p>
+          <p data-lang="en" hidden>We only show the real interface. Screenshots of the Alpha are being prepared, so this space stays reserved for now.</p>
+        </div>
+
+        <figure class="sc-shot-frame">
+          <div class="sc-shot-canvas">
+            <span class="sc-shot-badge">
+              <span data-lang="ru">Скоро</span>
+              <span data-lang="en" hidden>Coming soon</span>
+            </span>
+            <svg class="sc-shot-icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+              <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="6" y="9" width="36" height="30" rx="5"></rect>
+                <path d="M6 31l9-8 7 6 8-8 12 11"></path>
+                <circle cx="17.5" cy="18.5" r="3"></circle>
+              </g>
+            </svg>
+          </div>
+          <figcaption class="sc-shot-caption">
+            <span data-lang="ru">Скриншоты интерфейса будут добавлены в ближайшем обновлении сайта.</span>
+            <span data-lang="en" hidden>Interface screenshots will be added in an upcoming site update.</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ========================== FEATURES ========================== -->
+    <section class="content-section sc-section sc-features-section" id="features" aria-labelledby="sc-features-title">
+      <div class="shell">
+        <div class="section-heading sc-features-heading">
+          <p class="section-kicker">
+            <span data-lang="ru">Возможности</span>
+            <span data-lang="en" hidden>Features</span>
+          </p>
+          <h2 id="sc-features-title">
+            <span data-lang="ru">Всё нужное в одном рабочем процессе</span>
+            <span data-lang="en" hidden>Everything you need in one workflow</span>
+          </h2>
+          <p data-lang="ru">SimplClip сохраняет скопированное, помогает быстро найти нужное, возвращает его в работу — и оставляет контроль за вами.</p>
+          <p data-lang="en" hidden>SimplClip keeps what you copy, helps you find it quickly, returns it to your work — and leaves you in control.</p>
+        </div>
+
+        <div class="sc-groups">
+
+          <!-- 01 — CAPTURE : wide split panel -->
+          <article class="sc-group sc-group--capture">
+            <div class="sc-group-main">
+              <span class="sc-group-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="8.5" y="3.5" width="12" height="14" rx="3"></rect>
+                    <path d="M15.5 20.5h-7a3 3 0 0 1-3-3v-11"></path>
+                  </g>
+                </svg>
+              </span>
+              <span class="sc-group-code">01 — Capture</span>
+              <h3 data-lang="ru">История</h3>
+              <h3 data-lang="en" hidden>History</h3>
+              <p class="sc-group-lead" data-lang="ru">SimplClip сохраняет то, что вы копируете, чтобы вы могли вернуться к этому позже. Ничего не нужно сохранять вручную.</p>
+              <p class="sc-group-lead" data-lang="en" hidden>SimplClip keeps the items you copy so you can come back to them later. Nothing needs to be saved by hand.</p>
+
+              <ul class="sc-point-list">
+                <li>
+                  <h4 data-lang="ru">История сохраняется между запусками</h4>
+                  <h4 data-lang="en" hidden>History persists between sessions</h4>
+                  <p data-lang="ru">Записи хранятся локально и остаются на месте после перезапуска Windows.</p>
+                  <p data-lang="en" hidden>Entries are stored locally and are still there after a Windows restart.</p>
+                </li>
+                <li>
+                  <h4 data-lang="ru">Размер истории настраивается</h4>
+                  <h4 data-lang="en" hidden>Configurable history size</h4>
+                  <p data-lang="ru">Вы задаёте, сколько элементов SimplClip хранит.</p>
+                  <p data-lang="en" hidden>You set how many items SimplClip keeps.</p>
+                </li>
+              </ul>
+            </div>
+
+            <div class="sc-types" role="group" aria-labelledby="sc-types-label">
+              <p class="sc-types-label" id="sc-types-label">
+                <span data-lang="ru">Что попадает в историю</span>
+                <span data-lang="en" hidden>What enters the history</span>
+              </p>
+              <ul class="sc-type-list">
+                <li>
+                  <span class="sc-type-mark" aria-hidden="true">
+                    <svg viewBox="0 0 20 20" focusable="false">
+                      <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                        <path d="M5 6h10M5 10h10M5 14h6"></path>
+                      </g>
+                    </svg>
+                  </span>
+                  <span data-lang="ru">Текст</span>
+                  <span data-lang="en" hidden>Text</span>
+                </li>
+                <li>
+                  <span class="sc-type-mark" aria-hidden="true">
+                    <svg viewBox="0 0 20 20" focusable="false">
+                      <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                        <path d="M8.4 11.6a3 3 0 0 0 4.2 0l2.4-2.4a3 3 0 0 0-4.2-4.2l-.7.7"></path>
+                        <path d="M11.6 8.4a3 3 0 0 0-4.2 0L5 10.8a3 3 0 0 0 4.2 4.2l.7-.7"></path>
+                      </g>
+                    </svg>
+                  </span>
+                  <span data-lang="ru">Ссылки</span>
+                  <span data-lang="en" hidden>Links</span>
+                </li>
+                <li>
+                  <span class="sc-type-mark" aria-hidden="true">
+                    <svg viewBox="0 0 20 20" focusable="false">
+                      <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="4.5" width="14" height="11" rx="2.4"></rect>
+                        <path d="M3 12.4l3.6-3.2 2.8 2.4 3.2-3.2L17 11.6"></path>
+                      </g>
+                    </svg>
+                  </span>
+                  <span data-lang="ru">Изображения</span>
+                  <span data-lang="en" hidden>Images</span>
+                </li>
+                <li>
+                  <span class="sc-type-mark" aria-hidden="true">
+                    <svg viewBox="0 0 20 20" focusable="false">
+                      <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3.5 6.2a1.8 1.8 0 0 1 1.8-1.8h2.6l1.6 2h5.2a1.8 1.8 0 0 1 1.8 1.8v5.6a1.8 1.8 0 0 1-1.8 1.8H5.3a1.8 1.8 0 0 1-1.8-1.8z"></path>
+                      </g>
+                    </svg>
+                  </span>
+                  <span data-lang="ru">Файлы</span>
+                  <span data-lang="en" hidden>Files</span>
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 02 — FIND + 03 — PASTE : paired row -->
+          <div class="sc-group-pair">
+
+            <article class="sc-group">
+              <span class="sc-group-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                    <circle cx="10.8" cy="10.8" r="6.3"></circle>
+                    <path d="M15.4 15.4l4.1 4.1"></path>
+                  </g>
+                </svg>
+              </span>
+              <span class="sc-group-code">02 — Find</span>
+              <h3 data-lang="ru">Поиск</h3>
+              <h3 data-lang="en" hidden>Find</h3>
+              <p class="sc-group-lead" data-lang="ru">История полезна ровно настолько, насколько быстро в ней находится нужное.</p>
+              <p class="sc-group-lead" data-lang="en" hidden>A history is only as useful as how quickly you can find things in it.</p>
+
+              <ul class="sc-point-list">
+                <li>
+                  <h4 data-lang="ru">Быстрый поиск по истории</h4>
+                  <h4 data-lang="en" hidden>Fast search across history</h4>
+                  <p data-lang="ru">Начните набирать — список сузится до подходящих элементов.</p>
+                  <p data-lang="en" hidden>Start typing and the list narrows to the matching items.</p>
+                </li>
+                <li>
+                  <h4 data-lang="ru">Закреплённые элементы</h4>
+                  <h4 data-lang="en" hidden>Pinned items</h4>
+                  <p data-lang="ru">То, что нужно постоянно, остаётся под рукой и не теряется среди нового.</p>
+                  <p data-lang="en" hidden>What you need all the time stays within reach instead of sinking under newer entries.</p>
+                </li>
+                <li>
+                  <h4 data-lang="ru">Видно, откуда скопировано</h4>
+                  <h4 data-lang="en" hidden>See where it came from</h4>
+                  <p data-lang="ru">SimplClip запоминает приложение-источник, поэтому нужную запись легче узнать.</p>
+                  <p data-lang="en" hidden>SimplClip records the source application, so the entry you want is easier to recognise.</p>
+                </li>
+              </ul>
+            </article>
+
+            <article class="sc-group sc-group--paste">
+              <span class="sc-group-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 3.5v10"></path>
+                    <path d="M8.4 10.2L12 13.8l3.6-3.6"></path>
+                    <path d="M4.5 16v2.2a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V16"></path>
+                  </g>
+                </svg>
+              </span>
+              <span class="sc-group-code">03 — Paste</span>
+              <h3 data-lang="ru">Вставка</h3>
+              <h3 data-lang="en" hidden>Paste</h3>
+              <p class="sc-group-lead" data-lang="ru">Весь сценарий рассчитан на клавиатуру: вызвали, нашли, вставили.</p>
+              <p class="sc-group-lead" data-lang="en" hidden>The whole flow is built around the keyboard: open, find, paste.</p>
+
+              <p class="sc-shortcut">
+                <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>V</kbd>
+              </p>
+
+              <ul class="sc-point-list">
+                <li>
+                  <h4 data-lang="ru">Работа с клавиатуры</h4>
+                  <h4 data-lang="en" hidden>Keyboard-friendly navigation</h4>
+                  <p data-lang="ru">Открытие, поиск и выбор элемента выполняются без мыши.</p>
+                  <p data-lang="en" hidden>Opening, searching and choosing an item all work without the mouse.</p>
+                </li>
+                <li>
+                  <h4>Direct Paste</h4>
+                  <p data-lang="ru">Выбранное возвращается в приложение, из которого вы вызвали SimplClip.</p>
+                  <p data-lang="en" hidden>Your choice goes back into the application you called SimplClip from.</p>
+                </li>
+                <li>
+                  <h4 data-lang="ru">Копировать без вставки</h4>
+                  <h4 data-lang="en" hidden>Copy without pasting</h4>
+                  <p data-lang="ru"><kbd>Ctrl</kbd> + <kbd>Enter</kbd> возвращает элемент в буфер обмена, ничего не вставляя.</p>
+                  <p data-lang="en" hidden><kbd>Ctrl</kbd> + <kbd>Enter</kbd> puts the item back on the clipboard without pasting anything.</p>
+                </li>
+                <li>
+                  <h4 data-lang="ru">Своё сочетание клавиш</h4>
+                  <h4 data-lang="en" hidden>Your own shortcut</h4>
+                  <p data-lang="ru">Горячую клавишу вызова можно изменить в настройках.</p>
+                  <p data-lang="en" hidden>The shortcut that opens SimplClip can be changed in the settings.</p>
+                </li>
+              </ul>
+            </article>
+
+          </div>
+
+          <!-- 04 — CONTROL : wide, horizontal facts -->
+          <article class="sc-group sc-group--control">
+            <div class="sc-group-main">
+              <span class="sc-group-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                    <path d="M4 8h9M17 8h3M4 16h3M11 16h9"></path>
+                    <circle cx="15" cy="8" r="2.2"></circle>
+                    <circle cx="9" cy="16" r="2.2"></circle>
+                  </g>
+                </svg>
+              </span>
+              <span class="sc-group-code">04 — Control</span>
+              <h3 data-lang="ru">Контроль</h3>
+              <h3 data-lang="en" hidden>Control</h3>
+              <p class="sc-group-lead" data-lang="ru">Вы решаете, что попадает в историю, а что не должно записываться вообще.</p>
+              <p class="sc-group-lead" data-lang="en" hidden>You decide what enters the history — and what should not be recorded at all.</p>
+            </div>
+
+            <ul class="sc-control-list">
+              <li>
+                <h4 data-lang="ru">Хранение на компьютере</h4>
+                <h4 data-lang="en" hidden>Stored on your computer</h4>
+                <p data-lang="ru">История буфера обмена хранится локально.</p>
+                <p data-lang="en" hidden>Clipboard history is stored locally.</p>
+              </li>
+              <li>
+                <h4 data-lang="ru">Приватный режим</h4>
+                <h4 data-lang="en" hidden>Private Mode</h4>
+                <p data-lang="ru">Приостанавливает запись; захват можно отключить совсем.</p>
+                <p data-lang="en" hidden>Pauses recording; capture can also be switched off entirely.</p>
+              </li>
+              <li>
+                <h4 data-lang="ru">Исключения приложений</h4>
+                <h4 data-lang="en" hidden>Application exclusions</h4>
+                <p data-lang="ru">Скопированное в выбранных приложениях не записывается.</p>
+                <p data-lang="en" hidden>What you copy in chosen applications is not recorded.</p>
+              </li>
+              <li>
+                <h4 data-lang="ru">Исключения по типу</h4>
+                <h4 data-lang="en" hidden>Content type exclusions</h4>
+                <p data-lang="ru">Изображения и файлы можно исключить в настройках приватности.</p>
+                <p data-lang="en" hidden>Images and files can be excluded in the privacy settings.</p>
+              </li>
+              <li>
+                <h4 data-lang="ru">Работа в фоне</h4>
+                <h4 data-lang="en" hidden>Runs in the background</h4>
+                <p data-lang="ru">Значок в трее, окно появляется только по вызову. Есть автозапуск с Windows.</p>
+                <p data-lang="en" hidden>A tray icon; the window appears only when you call it. Optional startup with Windows.</p>
+              </li>
+              <li>
+                <h4 data-lang="ru">Русский и английский</h4>
+                <h4 data-lang="en" hidden>Russian and English</h4>
+                <p data-lang="ru">Язык интерфейса: системный, русский или английский.</p>
+                <p data-lang="en" hidden>Interface language: system, Russian or English.</p>
+              </li>
+              <li>
+                <h4 data-lang="ru">Несколько мониторов</h4>
+                <h4 data-lang="en" hidden>Multiple monitors</h4>
+                <p data-lang="ru">Окно корректно открывается на разных экранах и при разном масштабе.</p>
+                <p data-lang="en" hidden>The window opens correctly across screens and DPI scaling levels.</p>
+              </li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================== PRIVACY ========================== -->
+    <section class="content-section sc-section sc-privacy-section" id="privacy" aria-labelledby="sc-privacy-title">
+      <div class="shell">
+        <div class="sc-privacy">
+
+          <div class="sc-privacy-copy">
+            <span class="sc-privacy-motif" aria-hidden="true">
+              <svg viewBox="0 0 44 44" focusable="false">
+                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="7.5" y="12.5" width="29" height="19" rx="3" stroke-width="1.4" opacity=".5"></rect>
+                  <path d="M15 35.5h14" stroke-width="1.4" opacity=".5"></path>
+                  <path d="M18.6 21.4v-2.1a3.4 3.4 0 0 1 6.8 0v2.1" stroke-width="1.7"></path>
+                  <rect x="16.6" y="21.4" width="10.8" height="7.4" rx="2.1" stroke-width="1.7"></rect>
+                </g>
+              </svg>
+            </span>
+
+            <p class="section-kicker">
+              <span data-lang="ru">Приватность</span>
+              <span data-lang="en" hidden>Privacy</span>
+            </p>
+            <h2 id="sc-privacy-title" class="sc-privacy-title">
+              <span data-lang="ru">История буфера обмена хранится на вашем компьютере.</span>
+              <span data-lang="en" hidden>Your clipboard history stays on your PC.</span>
+            </h2>
+            <p class="sc-privacy-lead" data-lang="ru">Буфер обмена — это то, что вы копируете в течение дня: рабочие заметки, адреса, фрагменты документов. SimplClip построен так, чтобы эти данные оставались там, где вы работаете, и чтобы вы могли решать, что вообще попадает в историю.</p>
+            <p class="sc-privacy-lead" data-lang="en" hidden>Your clipboard is whatever you copy during the day: work notes, addresses, fragments of documents. SimplClip is built so that this data stays where you work — and so that you decide what enters the history in the first place.</p>
+
+            <p class="sc-privacy-footnote" data-lang="ru">Здесь описано текущее поведение SimplClip. Полные условия конфиденциальности будут опубликованы до коммерческого релиза.</p>
+            <p class="sc-privacy-footnote" data-lang="en" hidden>This section describes how SimplClip behaves today. Full privacy terms will be published before the commercial release.</p>
+          </div>
+
+          <div class="sc-privacy-facts">
+            <p class="sc-privacy-facts-label">
+              <span data-lang="ru">Что это значит на практике</span>
+              <span data-lang="en" hidden>What that means in practice</span>
+            </p>
+
+            <ul class="sc-privacy-list">
+              <li>
+                <span class="sc-fact-mark" aria-hidden="true">
+                  <svg viewBox="0 0 20 20" focusable="false">
+                    <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="2.8" y="4" width="14.4" height="9.6" rx="2"></rect>
+                      <path d="M6.6 16.4h6.8"></path>
+                    </g>
+                  </svg>
+                </span>
+                <div>
+                  <h3 data-lang="ru">Хранение на устройстве</h3>
+                  <h3 data-lang="en" hidden>Stored on your device</h3>
+                  <p data-lang="ru">SimplClip сохраняет историю буфера обмена локально, на том компьютере, где он установлен.</p>
+                  <p data-lang="en" hidden>SimplClip stores clipboard history locally, on the computer where it is installed.</p>
+                </div>
+              </li>
+
+              <li>
+                <span class="sc-fact-mark" aria-hidden="true">
+                  <svg viewBox="0 0 20 20" focusable="false">
+                    <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M5.6 14.4a3.4 3.4 0 0 1 .5-6.76 4.6 4.6 0 0 1 8.2-1.5"></path>
+                      <path d="M14.9 9.2a3 3 0 0 1-.5 5.2"></path>
+                      <path d="M3.4 3.4l13.2 13.2"></path>
+                    </g>
+                  </svg>
+                </span>
+                <div>
+                  <h3 data-lang="ru">Без обязательного облака</h3>
+                  <h3 data-lang="en" hidden>No required cloud service</h3>
+                  <p data-lang="ru">SimplClip не отправляет историю буфера обмена на серверы EmDiSoftware.</p>
+                  <p data-lang="en" hidden>SimplClip does not upload clipboard history to EmDiSoftware servers.</p>
+                </div>
+              </li>
+
+              <li>
+                <span class="sc-fact-mark" aria-hidden="true">
+                  <svg viewBox="0 0 20 20" focusable="false">
+                    <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                      <circle cx="10" cy="10" r="6.6"></circle>
+                      <path d="M10 5.6v4.6"></path>
+                    </g>
+                  </svg>
+                </span>
+                <div>
+                  <h3 data-lang="ru">Приватный режим</h3>
+                  <h3 data-lang="en" hidden>Private Mode</h3>
+                  <p data-lang="ru">Приватный режим временно останавливает запись истории, а захват можно отключить в настройках совсем.</p>
+                  <p data-lang="en" hidden>Private Mode pauses history recording, and capture can be switched off entirely in the settings.</p>
+                </div>
+              </li>
+
+              <li>
+                <span class="sc-fact-mark" aria-hidden="true">
+                  <svg viewBox="0 0 20 20" focusable="false">
+                    <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="3" y="3.6" width="14" height="12.8" rx="2.2"></rect>
+                      <path d="M3 7.2h14"></path>
+                      <path d="M8.4 11l3.2 3.2M11.6 11l-3.2 3.2"></path>
+                    </g>
+                  </svg>
+                </span>
+                <div>
+                  <h3 data-lang="ru">Исключения приложений</h3>
+                  <h3 data-lang="en" hidden>Application exclusions</h3>
+                  <p data-lang="ru">Отдельные приложения можно исключить, чтобы скопированное в них не записывалось.</p>
+                  <p data-lang="en" hidden>Individual applications can be excluded so that what you copy inside them is not recorded.</p>
+                </div>
+              </li>
+
+              <li>
+                <span class="sc-fact-mark" aria-hidden="true">
+                  <svg viewBox="0 0 20 20" focusable="false">
+                    <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="2.8" y="4.4" width="14.4" height="11.2" rx="2.2"></rect>
+                      <path d="M2.8 12.2l3.6-3.2 2.8 2.4 3.2-3.2 4.8 4.2"></path>
+                    </g>
+                  </svg>
+                </span>
+                <div>
+                  <h3 data-lang="ru">Исключения по типу данных</h3>
+                  <h3 data-lang="en" hidden>Content type exclusions</h3>
+                  <p data-lang="ru">Поддерживаемые категории, такие как изображения и файлы, можно исключить через настройки приватности.</p>
+                  <p data-lang="en" hidden>Supported categories such as images and files can be excluded through the privacy settings.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================== HOW IT WORKS ======================== -->
+    <section class="content-section sc-section sc-how-section" id="how-it-works" aria-labelledby="sc-how-title">
+      <div class="shell">
+        <div class="section-heading sc-how-heading">
+          <p class="section-kicker">
+            <span data-lang="ru">Как работает</span>
+            <span data-lang="en" hidden>How it works</span>
+          </p>
+          <h2 id="sc-how-title">
+            <span data-lang="ru">Пять шагов, которые вы уже знаете</span>
+            <span data-lang="en" hidden>Five steps you already know</span>
+          </h2>
+          <p data-lang="ru">Ничему новому учиться не нужно: вы копируете так же, как раньше, а SimplClip добавляет к этому один шаг — выбор.</p>
+          <p data-lang="en" hidden>There is nothing new to learn: you copy exactly as before, and SimplClip adds a single step — choosing.</p>
+        </div>
+
+        <ol class="sc-flow">
+          <li class="sc-flow-step">
+            <span class="sc-flow-marker" aria-hidden="true">1</span>
+            <h3 data-lang="ru">Копируете</h3>
+            <h3 data-lang="en" hidden>Copy</h3>
+            <p data-lang="ru">Текст, ссылку, изображение или файл.</p>
+            <p data-lang="en" hidden>Text, a link, an image or a file.</p>
+          </li>
+          <li class="sc-flow-step">
+            <span class="sc-flow-marker" aria-hidden="true">2</span>
+            <h3><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>V</kbd></h3>
+            <p data-lang="ru">Открывает компактное окно SimplClip поверх текущей работы.</p>
+            <p data-lang="en" hidden>Opens the compact SimplClip window over your current work.</p>
+          </li>
+          <li class="sc-flow-step">
+            <span class="sc-flow-marker" aria-hidden="true">3</span>
+            <h3 data-lang="ru">Находите нужное</h3>
+            <h3 data-lang="en" hidden>Find what you need</h3>
+            <p data-lang="ru">Поиск по истории или выбор элемента с клавиатуры.</p>
+            <p data-lang="en" hidden>Search the history, or pick an item with the keyboard.</p>
+          </li>
+          <li class="sc-flow-step">
+            <span class="sc-flow-marker" aria-hidden="true">4</span>
+            <h3><kbd>Enter</kbd> &mdash; <span data-lang="ru">вставить</span><span data-lang="en" hidden>paste</span></h3>
+            <p data-lang="ru">Direct Paste отправляет элемент в ранее активное приложение, где это поддерживается.</p>
+            <p data-lang="en" hidden>Direct Paste sends the item to the previously active application where supported.</p>
+          </li>
+          <li class="sc-flow-step">
+            <span class="sc-flow-marker" aria-hidden="true">5</span>
+            <h3><kbd>Ctrl</kbd> + <kbd>Enter</kbd></h3>
+            <p data-lang="ru">Копировать без вставки — элемент просто возвращается в буфер обмена.</p>
+            <p data-lang="en" hidden>Copy without pasting — the item simply goes back to the clipboard.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ========================= DIRECT PASTE ========================= -->
+    <section class="content-section sc-section sc-direct-section" aria-labelledby="sc-direct-title">
+      <div class="shell">
+        <div class="sc-direct">
+
+          <div class="sc-direct-copy">
+            <p class="section-kicker">Direct Paste</p>
+            <h2 id="sc-direct-title">
+              <span data-lang="ru">Меньше переключений. Быстрее вставка.</span>
+              <span data-lang="en" hidden>Less switching. Faster pasting.</span>
+            </h2>
+            <p class="sc-direct-lead" data-lang="ru">Откройте SimplClip поверх текущей работы, выберите нужный элемент — и Direct Paste вернёт его в ранее активное приложение без повторного копирования вручную.</p>
+            <p class="sc-direct-lead" data-lang="en" hidden>Open SimplClip on top of what you are doing, pick the item you need, and Direct Paste returns it to the application you were just in — no copying it by hand a second time.</p>
+
+            <p class="sc-direct-note" data-lang="ru">Совместимость зависит от приложения назначения.</p>
+            <p class="sc-direct-note" data-lang="en" hidden>Compatibility can depend on the target application.</p>
+          </div>
+
+          <div class="sc-direct-diagram">
+            <div class="sc-dp-stage">
+
+              <div class="sc-dp-frame sc-dp-frame--app">
+                <span class="sc-dp-bar" aria-hidden="true">
+                  <i></i><i></i><i></i>
+                </span>
+                <span class="sc-dp-label">
+                  <span data-lang="ru">Ваше приложение</span>
+                  <span data-lang="en" hidden>Your application</span>
+                </span>
+                <span class="sc-dp-caret" aria-hidden="true"></span>
+              </div>
+
+              <div class="sc-dp-arrow sc-dp-arrow--down" aria-hidden="true">
+                <span class="sc-dp-arrow-line"></span>
+                <span class="sc-dp-arrow-key"><kbd>Ctrl</kbd><kbd>Shift</kbd><kbd>V</kbd></span>
+              </div>
+
+              <div class="sc-dp-frame sc-dp-frame--clip">
+                <span class="sc-dp-label sc-dp-label--accent">SimplClip</span>
+                <span class="sc-dp-rows" aria-hidden="true">
+                  <i></i>
+                  <i class="is-picked"></i>
+                  <i></i>
+                </span>
+                <span class="sc-dp-pick">
+                  <span data-lang="ru">Выбранный элемент</span>
+                  <span data-lang="en" hidden>Selected item</span>
+                </span>
+              </div>
+
+              <div class="sc-dp-arrow sc-dp-arrow--back" aria-hidden="true">
+                <span class="sc-dp-arrow-line"></span>
+              </div>
+
+              <p class="sc-dp-return">
+                <span data-lang="ru">Содержимое возвращается в ранее активное приложение</span>
+                <span data-lang="en" hidden>The content returns to the previously active application</span>
+              </p>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================== PRICING =========================== -->
+    <section class="content-section sc-section" id="pricing" aria-labelledby="sc-pricing-title">
+      <div class="shell">
+        <div class="section-heading">
+          <p class="section-kicker">
+            <span data-lang="ru">Цена</span>
+            <span data-lang="en" hidden>Pricing</span>
+          </p>
+          <h2 id="sc-pricing-title">
+            <span data-lang="ru">Планируемая цена запуска</span>
+            <span data-lang="en" hidden>Planned launch pricing</span>
+          </h2>
+          <p data-lang="ru">Раздел показан заранее, чтобы модель лицензирования была понятна до релиза. Цены планируемые и относятся к будущей коммерческой версии.</p>
+          <p data-lang="en" hidden>This section is shown in advance so the licensing model is clear before release. The prices are planned and refer to the future commercial release.</p>
+        </div>
+
+        <div class="sc-preview-banner" role="note">
+          <span class="sc-preview-mark" aria-hidden="true">
+            <svg viewBox="0 0 16 16" focusable="false">
+              <g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+                <circle cx="8" cy="8" r="6.3"></circle>
+                <path d="M8 7.2v4"></path>
+                <path d="M8 4.9h.01"></path>
+              </g>
+            </svg>
+          </span>
+          <span class="sc-preview-text">
+            <strong data-lang="ru">Планируемая коммерческая версия</strong>
+            <strong data-lang="en" hidden>Planned commercial release</strong>
+            <span data-lang="ru">Продажи SimplClip ещё не открыты. Ниже показаны планируемые цены и модель лицензирования. Доступная сейчас сборка 0.1.0 Alpha использует отдельную лицензию Alpha Tester и к покупке Personal отношения не имеет.</span>
+            <span data-lang="en" hidden>SimplClip sales are not open yet. The pricing and licensing model below are planned for the commercial release. The 0.1.0 Alpha available today uses a separate Alpha Tester license and is unrelated to buying a Personal license.</span>
+          </span>
+        </div>
+
+        <div class="sc-price-grid">
+          <article class="sc-price-card">
+            <header>
+              <h3 data-lang="ru">Россия</h3>
+              <h3 data-lang="en" hidden>Russia</h3>
+              <p data-lang="ru">SimplClip Personal · разовая покупка</p>
+              <p data-lang="en" hidden>SimplClip Personal · one-time purchase</p>
+            </header>
+            <dl class="sc-price-rows">
+              <div class="sc-price-row sc-price-row--primary">
+                <dt>
+                  <span data-lang="ru">1 устройство</span>
+                  <span data-lang="en" hidden>1 device</span>
+                  <span class="sc-price-tag">
+                    <span data-lang="ru">Популярный выбор</span>
+                    <span data-lang="en" hidden>Popular choice</span>
+                  </span>
+                </dt>
+                <dd>299 &#8381;</dd>
+              </div>
+              <div class="sc-price-row sc-price-row--secondary">
+                <dt>
+                  <span data-lang="ru">2 устройства</span>
+                  <span data-lang="en" hidden>2 devices</span>
+                </dt>
+                <dd>449 &#8381;</dd>
+              </div>
+            </dl>
+          </article>
+
+          <article class="sc-price-card">
+            <header>
+              <h3 data-lang="ru">Международная цена</h3>
+              <h3 data-lang="en" hidden>International</h3>
+              <p data-lang="ru">SimplClip Personal · разовая покупка</p>
+              <p data-lang="en" hidden>SimplClip Personal · one-time purchase</p>
+            </header>
+            <dl class="sc-price-rows">
+              <div class="sc-price-row sc-price-row--primary">
+                <dt>
+                  <span data-lang="ru">1 устройство</span>
+                  <span data-lang="en" hidden>1 device</span>
+                  <span class="sc-price-tag">
+                    <span data-lang="ru">Популярный выбор</span>
+                    <span data-lang="en" hidden>Popular choice</span>
+                  </span>
+                </dt>
+                <dd>$3.99</dd>
+              </div>
+              <div class="sc-price-row sc-price-row--secondary">
+                <dt>
+                  <span data-lang="ru">2 устройства</span>
+                  <span data-lang="en" hidden>2 devices</span>
+                </dt>
+                <dd>$5.99</dd>
+              </div>
+            </dl>
+          </article>
+
+          <article class="sc-price-card sc-price-card--model">
+            <header>
+              <h3 data-lang="ru">Что вы получаете</h3>
+              <h3 data-lang="en" hidden>What you get</h3>
+              <p data-lang="ru">Планируемая модель лицензирования</p>
+              <p data-lang="en" hidden>Planned licensing model</p>
+            </header>
+            <ul class="sc-model-list">
+              <li>
+                <span data-lang="ru">Лицензия Personal</span>
+                <span data-lang="en" hidden>Personal license</span>
+              </li>
+              <li>
+                <span data-lang="ru">Разовая покупка — без подписки</span>
+                <span data-lang="en" hidden>One-time purchase — no subscription</span>
+              </li>
+              <li>
+                <span data-lang="ru">Вариант на 1 или 2 устройства</span>
+                <span data-lang="en" hidden>1-device or 2-device option</span>
+              </li>
+              <li>
+                <span data-lang="ru">Работает без постоянного подключения к интернету</span>
+                <span data-lang="en" hidden>Works without a permanent internet connection</span>
+              </li>
+              <li>
+                <span data-lang="ru">Лицензия активируется для вашего устройства</span>
+                <span data-lang="en" hidden>The license is activated for your device</span>
+              </li>
+            </ul>
+          </article>
+        </div>
+
+        <p class="sc-trial-note">
+          <span data-lang="ru">В коммерческой версии планируется 7-дневный полнофункциональный пробный период. В версии 0.1.0 Alpha он не реализован и недоступен.</span>
+          <span data-lang="en" hidden>The commercial release is planned to include a 7-day full-feature trial. It is not implemented and not available in 0.1.0 Alpha.</span>
+        </p>
+
+        <!-- ------------------ PURCHASE FORM PREVIEW ------------------ -->
+        <div class="sc-purchase">
+          <div class="sc-purchase-form" role="group" aria-labelledby="sc-purchase-title">
+            <div class="sc-purchase-head">
+              <h3 id="sc-purchase-title">
+                <span data-lang="ru">Предпросмотр формы покупки</span>
+                <span data-lang="en" hidden>Purchase form preview</span>
+              </h3>
+              <span class="sc-badge-preview">
+                <span data-lang="ru">Не активна</span>
+                <span data-lang="en" hidden>Inactive</span>
+              </span>
+            </div>
+
+            <div class="sc-field">
+              <label class="sc-label" for="sc-email">
+                <span data-lang="ru">Email для доставки лицензии</span>
+                <span data-lang="en" hidden>Email for license delivery</span>
+              </label>
+              <input class="sc-input" id="sc-email" type="email" inputmode="email" autocomplete="off"
+                     placeholder="name@example.com" aria-describedby="sc-form-notice">
+            </div>
+
+            <div class="sc-field">
+              <span class="sc-label" id="sc-license-label">
+                <span data-lang="ru">Тип лицензии</span>
+                <span data-lang="en" hidden>License type</span>
+              </span>
+              <p class="sc-static-value" aria-labelledby="sc-license-label">SimplClip Personal</p>
+            </div>
+
+            <fieldset class="sc-field sc-fieldset">
+              <legend class="sc-label">
+                <span data-lang="ru">Количество устройств</span>
+                <span data-lang="en" hidden>Number of devices</span>
+              </legend>
+              <div class="sc-radio-row">
+                <label class="sc-radio">
+                  <input type="radio" name="sc-devices" value="1" id="sc-devices-1" checked>
+                  <span class="sc-radio-face">
+                    <span class="sc-radio-title">
+                      <span data-lang="ru">1 устройство</span>
+                      <span data-lang="en" hidden>1 device</span>
+                    </span>
+                  </span>
+                </label>
+                <label class="sc-radio">
+                  <input type="radio" name="sc-devices" value="2" id="sc-devices-2">
+                  <span class="sc-radio-face">
+                    <span class="sc-radio-title">
+                      <span data-lang="ru">2 устройства</span>
+                      <span data-lang="en" hidden>2 devices</span>
+                    </span>
+                  </span>
+                </label>
+              </div>
+            </fieldset>
+
+            <div class="sc-price-readout">
+              <span class="sc-price-readout-label">
+                <span data-lang="ru">Планируемая цена</span>
+                <span data-lang="en" hidden>Planned price</span>
+              </span>
+              <strong class="sc-price-readout-value" id="sc-price-value" aria-live="polite">299 &#8381;</strong>
+              <span class="sc-price-readout-region" id="sc-price-region">
+                <span data-lang="ru">Россия · цена запуска</span>
+                <span data-lang="en" hidden>International · launch price</span>
+              </span>
+            </div>
+
+            <button class="button sc-button-reset sc-button-unavailable sc-purchase-cta" type="button" disabled>
+              <span data-lang="ru">Продажи скоро</span>
+              <span data-lang="en" hidden>Sales coming soon</span>
+            </button>
+
+            <p class="sc-form-notice" id="sc-form-notice">
+              <span data-lang="ru">Форма пока не отправляет данные. Оплата будет выполняться только на защищённой странице платёжного провайдера.</span>
+              <span data-lang="en" hidden>This form does not submit data yet. Payment will only be completed on the payment provider's secure hosted page.</span>
+            </p>
+          </div>
+
+          <!-- ------------------ PAYMENT TRUST ------------------ -->
+          <aside class="sc-trust" aria-labelledby="sc-trust-title">
+            <h3 id="sc-trust-title">
+              <span data-lang="ru">Как будет проходить оплата</span>
+              <span data-lang="en" hidden>How payment will work</span>
+            </h3>
+            <ul class="sc-trust-list">
+              <li>
+                <span data-lang="ru">Данные банковской карты вводятся только на странице платёжного провайдера.</span>
+                <span data-lang="en" hidden>Card details are entered only on the payment provider's own page.</span>
+              </li>
+              <li>
+                <span data-lang="ru">Статический сайт EmDiSoftware не обрабатывает данные банковских карт.</span>
+                <span data-lang="en" hidden>The EmDiSoftware static website does not process bank-card data.</span>
+              </li>
+              <li>
+                <span data-lang="ru">Приватный ключ подписи лицензий не хранится в браузере и не размещается на публичном сайте.</span>
+                <span data-lang="en" hidden>The license signing private key is not stored in the browser and is not placed on the public website.</span>
+              </li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== LICENSE DELIVERY FLOW ==================== -->
+    <section class="content-section sc-section" aria-labelledby="sc-delivery-title">
+      <div class="shell">
+        <div class="section-heading">
+          <p class="section-kicker">
+            <span data-lang="ru">Планируемый процесс</span>
+            <span data-lang="en" hidden>Planned process</span>
+          </p>
+          <h2 id="sc-delivery-title">
+            <span data-lang="ru">Как будет выдаваться лицензия</span>
+            <span data-lang="en" hidden>How the license will be delivered</span>
+          </h2>
+          <p data-lang="ru">Это планируемый сценарий на момент запуска продаж. Автоматической выдачи лицензий сейчас не существует.</p>
+          <p data-lang="en" hidden>This is the planned workflow for when sales open. Automatic license issuing does not exist today.</p>
+        </div>
+
+        <ol class="sc-delivery">
+          <li>
+            <span class="sc-delivery-index" aria-hidden="true">01</span>
+            <h3 data-lang="ru">Выбор лицензии</h3>
+            <h3 data-lang="en" hidden>Choose license</h3>
+            <p data-lang="ru">Personal на 1 или 2 устройства.</p>
+            <p data-lang="en" hidden>Personal for 1 or 2 devices.</p>
+          </li>
+          <li>
+            <span class="sc-delivery-index" aria-hidden="true">02</span>
+            <h3 data-lang="ru">Оплата у провайдера</h3>
+            <h3 data-lang="en" hidden>Secure hosted payment</h3>
+            <p data-lang="ru">Платёж выполняется на защищённой странице платёжного провайдера.</p>
+            <p data-lang="en" hidden>The payment is completed on the provider's secure hosted page.</p>
+          </li>
+          <li>
+            <span class="sc-delivery-index" aria-hidden="true">03</span>
+            <h3 data-lang="ru">Передача Device ID</h3>
+            <h3 data-lang="en" hidden>Provide Device ID</h3>
+            <p data-lang="ru">Вы указываете Device ID компьютера, на котором будет работать SimplClip.</p>
+            <p data-lang="en" hidden>You provide the Device ID of the computer where SimplClip will run.</p>
+          </li>
+          <li>
+            <span class="sc-delivery-index" aria-hidden="true">04</span>
+            <h3 data-lang="ru">EmDiSoftware формирует лицензию</h3>
+            <h3 data-lang="en" hidden>EmDiSoftware generates the license</h3>
+            <p data-lang="ru">Лицензия создаётся для указанного устройства.</p>
+            <p data-lang="en" hidden>The license is created for the device you provided.</p>
+          </li>
+          <li>
+            <span class="sc-delivery-index" aria-hidden="true">05</span>
+            <h3 data-lang="ru">Вы получаете файл лицензии</h3>
+            <h3 data-lang="en" hidden>Receive signed license file</h3>
+            <p data-lang="ru">Файл лицензии с цифровой подписью приходит вам и активирует приложение.</p>
+            <p data-lang="en" hidden>A digitally signed license file is delivered to you and activates the application.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- =========================== DOWNLOAD =========================== -->
+    <section class="content-section sc-section sc-download-section" id="download" aria-labelledby="sc-download-title">
+      <div class="shell">
+        <div class="sc-release">
+
+          <div class="sc-release-head">
+            <p class="section-kicker">
+              <span data-lang="ru">Загрузка</span>
+              <span data-lang="en" hidden>Download</span>
+            </p>
+            <h2 id="sc-download-title">SimplClip 0.1.0 Alpha</h2>
+            <p class="sc-release-lead" data-lang="ru">Публичная сборка Alpha доступна в официальном репозитории релизов. Установщик рассчитан на текущего пользователя Windows и не требует прав администратора.</p>
+            <p class="sc-release-lead" data-lang="en" hidden>The public Alpha build is available in the official releases repository. The installer is per-user and does not require administrator rights.</p>
+
+            <div class="meta-row sc-chips">
+              <span>Windows 10/11</span>
+              <span>x64</span>
+              <span>0.1.0 Alpha</span>
+              <span class="sc-chip-accent">Local-first</span>
+            </div>
+
+            <div class="button-row sc-download-actions">
+              <a class="button button-primary" href="https://github.com/AdamAnomatik/SimplClip-Releases/releases/download/v0.1.0-alpha/SimplClip-0.1.0-alpha-win-x64-setup.exe" rel="noopener">
+                <span data-lang="ru">Скачать 0.1.0 Alpha</span>
+                <span data-lang="en" hidden>Download 0.1.0 Alpha</span>
+                <span aria-hidden="true">↓</span>
+              </a>
+              <a class="button button-secondary" href="https://github.com/AdamAnomatik/SimplClip-Releases/releases/tag/v0.1.0-alpha" rel="noopener">
+                <span data-lang="ru">Страница релиза</span>
+                <span data-lang="en" hidden>Release notes</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+              <a class="button button-secondary" href="https://github.com/AdamAnomatik/SimplClip-Releases/issues" rel="noopener">
+                <span data-lang="ru">Поддержка</span>
+                <span data-lang="en" hidden>Support</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+
+            <aside class="sc-alpha-note sc-alpha-note--wide" aria-labelledby="sc-alpha-dl-title">
+              <span class="sc-alpha-mark" aria-hidden="true">
+                <svg viewBox="0 0 20 20" focusable="false">
+                  <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                    <path d="M7.1 8.6V6.8a2.9 2.9 0 0 1 5.8 0v1.8"></path>
+                    <rect x="5.3" y="8.6" width="9.4" height="6.4" rx="2"></rect>
+                  </g>
+                </svg>
+              </span>
+              <span class="sc-alpha-body">
+                <strong id="sc-alpha-dl-title" data-lang="ru">Доступ к Alpha</strong>
+                <strong id="sc-alpha-dl-title-en" data-lang="en" hidden>Alpha access</strong>
+                <span data-lang="ru">Для запуска SimplClip 0.1.0 Alpha сейчас требуется лицензия Alpha Tester, привязанная к Device ID компьютера. Проверка лицензии выполняется офлайн. Без действующей лицензии Alpha Tester приложение открывает окно активации. Коммерческие лицензии Personal и пробный период пока не доступны.</span>
+                <span data-lang="en" hidden>SimplClip 0.1.0 Alpha currently requires an Alpha Tester license tied to the PC Device ID. License verification runs offline. Without a valid Alpha Tester license the application opens its activation window. Personal licenses and the planned trial are not available yet.</span>
+              </span>
+            </aside>
+          </div>
+
+          <div class="sc-release-file">
+            <p class="sc-release-file-label">
+              <span data-lang="ru">Файл установщика</span>
+              <span data-lang="en" hidden>Installer file</span>
+            </p>
+
+            <dl class="sc-file-rows">
+              <div class="sc-file-row">
+                <dt>
+                  <span data-lang="ru">Имя файла</span>
+                  <span data-lang="en" hidden>File name</span>
+                </dt>
+                <dd><code class="sc-mono sc-mono--break">SimplClip-0.1.0-alpha-win-x64-setup.exe</code></dd>
+              </div>
+              <div class="sc-file-row">
+                <dt>
+                  <span data-lang="ru">Размер</span>
+                  <span data-lang="en" hidden>Size</span>
+                </dt>
+                <dd>
+                  <span data-lang="ru">53 746 316 байт</span>
+                  <span data-lang="en" hidden>53,746,316 bytes</span>
+                </dd>
+              </div>
+              <div class="sc-file-row">
+                <dt>
+                  <span data-lang="ru">Платформа</span>
+                  <span data-lang="en" hidden>Platform</span>
+                </dt>
+                <dd>Windows 10/11 x64</dd>
+              </div>
+              <div class="sc-file-row">
+                <dt>
+                  <span data-lang="ru">Установка</span>
+                  <span data-lang="en" hidden>Installer</span>
+                </dt>
+                <dd>
+                  <span data-lang="ru">Для текущего пользователя</span>
+                  <span data-lang="en" hidden>Per-user Windows installer</span>
+                </dd>
+              </div>
+              <div class="sc-file-row sc-file-row--hash">
+                <dt>SHA-256</dt>
+                <dd><code class="sc-mono sc-mono--break">C2A6B314F1C21D0744948CD2BD159CBFE46DF40204F9920667F2863C3DE77D00</code></dd>
+              </div>
+            </dl>
+
+            <p class="sc-release-file-note" data-lang="ru">Сверьте контрольную сумму после загрузки, чтобы убедиться, что файл получен без изменений.</p>
+            <p class="sc-release-file-note" data-lang="en" hidden>Check the checksum after downloading to confirm the file arrived unmodified.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== FAQ ============================== -->
+    <section class="content-section sc-section" id="faq" aria-labelledby="sc-faq-title">
+      <div class="shell">
+        <div class="section-heading">
+          <p class="section-kicker">
+            <span data-lang="ru">Вопросы и ответы</span>
+            <span data-lang="en" hidden>Questions and answers</span>
+          </p>
+          <h2 id="sc-faq-title">
+            <span data-lang="ru">Частые вопросы</span>
+            <span data-lang="en" hidden>Frequently asked questions</span>
+          </h2>
+          <p data-lang="ru">Коротко о том, что SimplClip делает сегодня и что запланировано к коммерческому релизу.</p>
+          <p data-lang="en" hidden>A short summary of what SimplClip does today and what is planned for the commercial release.</p>
+        </div>
+
+        <div class="sc-faq">
+          <details class="sc-faq-item">
+            <summary>
+              <span data-lang="ru">Что такое SimplClip?</span>
+              <span data-lang="en" hidden>What is SimplClip?</span>
+            </summary>
+            <div class="sc-faq-body">
+              <p data-lang="ru">SimplClip — менеджер буфера обмена для Windows. Он ведёт историю того, что вы копируете, и открывает её в компактном всплывающем окне, чтобы вы могли вставить нужный элемент, а не копировать его заново.</p>
+              <p data-lang="en" hidden>SimplClip is a clipboard manager for Windows. It keeps a history of what you copy and opens it in a compact popup, so you can paste the item you need instead of copying it again.</p>
+            </div>
+          </details>
+
+          <details class="sc-faq-item">
+            <summary>
+              <span data-lang="ru">Какая версия доступна сейчас?</span>
+              <span data-lang="en" hidden>What version is available now?</span>
+            </summary>
+            <div class="sc-faq-body">
+              <p data-lang="ru">SimplClip 0.1.0 Alpha для Windows 10/11 (x64). Это первая публичная сборка: она уже опубликована и доступна для загрузки, но остаётся альфа-версией.</p>
+              <p data-lang="en" hidden>SimplClip 0.1.0 Alpha for Windows 10/11 (x64). This is the first public build: it is published and available to download, but it is still an alpha.</p>
+            </div>
+          </details>
+
+          <details class="sc-faq-item">
+            <summary>
+              <span data-lang="ru">Где хранится история буфера обмена?</span>
+              <span data-lang="en" hidden>Where is clipboard history stored?</span>
+            </summary>
+            <div class="sc-faq-body">
+              <p data-lang="ru">История хранится локально, на том компьютере, где установлен SimplClip.</p>
+              <p data-lang="en" hidden>The history is stored locally, on the computer where SimplClip is installed.</p>
+            </div>
+          </details>
+
+          <details class="sc-faq-item">
+            <summary>
+              <span data-lang="ru">Выгружаются ли данные буфера обмена в облако?</span>
+              <span data-lang="en" hidden>Is clipboard data uploaded to the cloud?</span>
+            </summary>
+            <div class="sc-faq-body">
+              <p data-lang="ru">Нет. SimplClip не отправляет историю буфера обмена на серверы EmDiSoftware. Она остаётся на вашем компьютере.</p>
+              <p data-lang="en" hidden>No. SimplClip does not upload clipboard history to EmDiSoftware servers. It stays on your PC.</p>
+            </div>
+          </details>
+
+          <details class="sc-faq-item">
+            <summary>
+              <span data-lang="ru">Какие типы данных поддерживаются?</span>
+              <span data-lang="en" hidden>What data types are supported?</span>
+            </summary>
+            <div class="sc-faq-body">
+              <p data-lang="ru">Текст, ссылки, изображения и файлы.</p>
+              <p data-lang="en" hidden>Text, links, images and files.</p>
+            </div>
+          </details>
+
+          <details class="sc-faq-item">
+            <summary>
+              <span data-lang="ru">Как открыть SimplClip?</span>
+              <span data-lang="en" hidden>How do I open SimplClip?</span>
+            </summary>
+            <div class="sc-faq-body">
+              <p data-lang="ru">Сочетанием клавиш <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>V</kbd>. Всплывающее окно открывается поверх того приложения, в котором вы работаете.</p>
+              <p data-lang="en" hidden>With the <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>V</kbd> shortcut. The popup opens on top of the application you are working in.</p>
+            </div>
+          </details>
+
+          <details class="sc-faq-item">
+            <summary>
+              <span data-lang="ru">Что такое Direct Paste?</span>
+              <span data-lang="en" hidden>What is Direct Paste?</span>
+            </summary>
+            <div class="sc-faq-body">
+              <p data-lang="ru">SimplClip открывается, пока вы работаете в другом приложении. Вы выбираете элемент из истории, и SimplClip может вставить это содержимое обратно в приложение, которое было активным до вызова. Приложения Windows принимают вставку по-разному, поэтому совместимость со всеми программами без исключения не гарантируется.</p>
+              <p data-lang="en" hidden>SimplClip opens while you are working in another application. You choose an item from the history, and SimplClip can paste that content back into the application that was active before. Windows applications accept pasted content in different ways, so compatibility with every program is not guaranteed.</p>
+            </div>
+          </details>
+
+          <details class="sc-faq-item">
+            <summary>
+              <span data-lang="ru">Что делает Ctrl+Enter?</span>
+              <span data-lang="en" hidden>What is Copy-only (Ctrl+Enter)?</span>
+            </summary>
+            <div class="sc-faq-body">
+              <p data-lang="ru">Это режим «копировать без вставки». <kbd>Enter</kbd> вставляет выбранный элемент в ранее активное приложение, а <kbd>Ctrl</kbd> + <kbd>Enter</kbd> только возвращает его в буфер обмена — вставите сами, когда понадобится.</p>
+              <p data-lang="en" hidden>It is copy without pasting. <kbd>Enter</kbd> pastes the selected item into the previously active application, while <kbd>Ctrl</kbd> + <kbd>Enter</kbd> only puts it back on the clipboard, so you can paste it yourself later.</p>
+            </div>
+          </details>
+
+          <details class="sc-faq-item">
+            <summary>
+              <span data-lang="ru">Можно ли исключить приложение из захвата?</span>
+              <span data-lang="en" hidden>Can I exclude an application from capture?</span>
+            </summary>
+            <div class="sc-faq-body">
+              <p data-lang="ru">Да. Приложение можно добавить в исключения в настройках приватности — скопированное в нём не будет записываться в историю. Там же можно исключить поддерживаемые категории, такие как изображения и файлы, или отключить захват полностью.</p>
+              <p data-lang="en" hidden>Yes. An application can be added to the exclusion list in the privacy settings — whatever you copy inside it will not be recorded. The same settings let you exclude supported categories such as images and files, or disable capture entirely.</p>
+            </div>
+          </details>
+
+          <details class="sc-faq-item">
+            <summary>
+              <span data-lang="ru">SimplClip работает в фоне?</span>
+              <span data-lang="en" hidden>Does SimplClip run in the background?</span>
+            </summary>
+            <div class="sc-faq-body">
+              <p data-lang="ru">Да. Чтобы вести историю и отвечать на сочетание клавиш, SimplClip должен быть запущен. Всплывающее окно появляется только тогда, когда вы его вызываете.</p>
+              <p data-lang="en" hidden>Yes. To keep the history and respond to the shortcut, SimplClip needs to be running. The popup appears only when you call it.</p>
+            </div>
+          </details>
+
+          <details class="sc-faq-item">
+            <summary>
+              <span data-lang="ru">Где скачать релиз?</span>
+              <span data-lang="en" hidden>Where can I download the release?</span>
+            </summary>
+            <div class="sc-faq-body">
+              <p data-lang="ru">В официальном публичном репозитории релизов: <a href="https://github.com/AdamAnomatik/SimplClip-Releases/releases/tag/v0.1.0-alpha" rel="noopener">страница релиза 0.1.0 Alpha</a>. Установщик также можно скачать из <a href="#download">раздела «Загрузка»</a> на этой странице.</p>
+              <p data-lang="en" hidden>In the official public releases repository: the <a href="https://github.com/AdamAnomatik/SimplClip-Releases/releases/tag/v0.1.0-alpha" rel="noopener">0.1.0 Alpha release page</a>. You can also get the installer from the <a href="#download">Download section</a> on this page.</p>
+            </div>
+          </details>
+
+          <details class="sc-faq-item">
+            <summary>
+              <span data-lang="ru">Как получить поддержку?</span>
+              <span data-lang="en" hidden>How do I get support?</span>
+            </summary>
+            <div class="sc-faq-body">
+              <p data-lang="ru">Через раздел Issues публичного репозитория релизов: <a href="https://github.com/AdamAnomatik/SimplClip-Releases/issues" rel="noopener">SimplClip-Releases · Issues</a>.</p>
+              <p data-lang="en" hidden>Through the Issues section of the public releases repository: <a href="https://github.com/AdamAnomatik/SimplClip-Releases/issues" rel="noopener">SimplClip-Releases · Issues</a>.</p>
+            </div>
+          </details>
+
+          <details class="sc-faq-item">
+            <summary>
+              <span data-lang="ru">Нужна ли лицензия для Alpha?</span>
+              <span data-lang="en" hidden>Does the Alpha require a license?</span>
+            </summary>
+            <div class="sc-faq-body">
+              <p data-lang="ru">Да. Для запуска SimplClip 0.1.0 Alpha требуется лицензия Alpha Tester. Без неё приложение открывает окно активации. Проверка лицензии выполняется офлайн.</p>
+              <p data-lang="en" hidden>Yes. Running SimplClip 0.1.0 Alpha requires an Alpha Tester license. Without one, the application opens its activation window. License verification runs offline.</p>
+            </div>
+          </details>
+
+          <details class="sc-faq-item">
+            <summary>
+              <span data-lang="ru">Что такое лицензия Alpha Tester?</span>
+              <span data-lang="en" hidden>What is an Alpha Tester license?</span>
+            </summary>
+            <div class="sc-faq-body">
+              <p data-lang="ru">Это отдельный тип лицензии для этапа тестирования: он привязан к Device ID компьютера и проверяется офлайн. Это единственный тип лицензии, который поддерживает версия 0.1.0 Alpha, и он не продаётся публично. Лицензия Personal — часть планируемой коммерческой версии и с Alpha Tester не связана.</p>
+              <p data-lang="en" hidden>It is a separate license type for the testing stage: it is tied to the PC Device ID and verified offline. It is the only license type 0.1.0 Alpha supports, and it is not sold publicly. The Personal license belongs to the planned commercial release and is unrelated to Alpha Tester.</p>
+            </div>
+          </details>
+
+          <details class="sc-faq-item">
+            <summary>
+              <span data-lang="ru">Можно ли купить SimplClip сейчас?</span>
+              <span data-lang="en" hidden>Is SimplClip available to buy now?</span>
+            </summary>
+            <div class="sc-faq-body">
+              <p data-lang="ru">Нет. Продажи ещё не открыты, а коммерческое лицензирование Personal не реализовано в версии 0.1.0 Alpha. Раздел с ценой опубликован как предварительный просмотр планируемой модели. Доступная сейчас Alpha работает по отдельной лицензии Alpha Tester.</p>
+              <p data-lang="en" hidden>No. Sales are not open yet, and commercial Personal licensing is not implemented in 0.1.0 Alpha. The pricing section is published as a preview of the planned model. The Alpha available today runs on a separate Alpha Tester license.</p>
+            </div>
+          </details>
+
+          <details class="sc-faq-item">
+            <summary>
+              <span data-lang="ru">Сколько будет стоить SimplClip?</span>
+              <span data-lang="en" hidden>What will SimplClip cost?</span>
+            </summary>
+            <div class="sc-faq-body">
+              <p data-lang="ru">Планируемые цены запуска для лицензии SimplClip Personal (разовая покупка): в России — 299 &#8381; за 1 устройство и 449 &#8381; за 2 устройства; международная цена — $3.99 за 1 устройство и $5.99 за 2 устройства. Это планируемые цены, а не действующее предложение.</p>
+              <p data-lang="en" hidden>The planned launch prices for a SimplClip Personal license (one-time purchase): in Russia, 299 &#8381; for 1 device and 449 &#8381; for 2 devices; internationally, $3.99 for 1 device and $5.99 for 2 devices. These are planned prices, not an active offer.</p>
+            </div>
+          </details>
+
+          <details class="sc-faq-item">
+            <summary>
+              <span data-lang="ru">Будет ли бесплатный пробный период?</span>
+              <span data-lang="en" hidden>Is there a free trial?</span>
+            </summary>
+            <div class="sc-faq-body">
+              <p data-lang="ru">В коммерческой версии планируется 7-дневный полнофункциональный пробный период. В версии 0.1.0 Alpha он не реализован и недоступен: для запуска Alpha нужна лицензия Alpha Tester.</p>
+              <p data-lang="en" hidden>The commercial release is planned to include a 7-day full-feature trial. It is not implemented and not available in 0.1.0 Alpha: running the Alpha requires an Alpha Tester license.</p>
+            </div>
+          </details>
+
+          <details class="sc-faq-item">
+            <summary>
+              <span data-lang="ru">Как будут работать перенос лицензии, замена комплектующих, возвраты и обновления?</span>
+              <span data-lang="en" hidden>What about license transfers, hardware changes, refunds and upgrades?</span>
+            </summary>
+            <div class="sc-faq-body">
+              <p data-lang="ru">Эти условия ещё не определены окончательно. Правила переноса лицензии, замены оборудования, возвратов, лицензий Business и обновлений между крупными версиями будут опубликованы до открытия коммерческих продаж.</p>
+              <p data-lang="en" hidden>These terms are not finalised yet. The rules for license transfers, hardware changes, refunds, Business licenses and major-version upgrades will be published before commercial sales open.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================= FINAL CTA ========================= -->
+    <section class="content-section sc-section sc-final-section" aria-labelledby="sc-final-title">
+      <div class="shell">
+        <div class="sc-final">
+          <p class="section-kicker">
+            <span data-lang="ru">Дальше</span>
+            <span data-lang="en" hidden>Next</span>
+          </p>
+          <h2 id="sc-final-title">
+            <span data-lang="ru">Попробуйте SimplClip 0.1.0 Alpha</span>
+            <span data-lang="en" hidden>Try SimplClip 0.1.0 Alpha</span>
+          </h2>
+          <p data-lang="ru">Первая публичная сборка доступна для загрузки. Релизы и поддержка ведутся в открытом репозитории. Напомним: для запуска Alpha нужна лицензия Alpha Tester.</p>
+          <p data-lang="en" hidden>The first public build is available to download. Releases and support live in an open repository. As a reminder, running the Alpha requires an Alpha Tester license.</p>
+
+          <div class="button-row sc-final-actions">
+            <a class="button button-primary" href="https://github.com/AdamAnomatik/SimplClip-Releases/releases/download/v0.1.0-alpha/SimplClip-0.1.0-alpha-win-x64-setup.exe" rel="noopener">
+              <span data-lang="ru">Скачать 0.1.0 Alpha</span>
+              <span data-lang="en" hidden>Download 0.1.0 Alpha</span>
+              <span aria-hidden="true">↓</span>
+            </a>
+            <a class="button button-secondary" href="https://github.com/AdamAnomatik/SimplClip-Releases" rel="noopener">
+              <span data-lang="ru">Репозиторий релизов</span>
+              <span data-lang="en" hidden>Public releases repository</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+            <a class="button button-secondary" href="https://github.com/AdamAnomatik/SimplClip-Releases/issues" rel="noopener">
+              <span data-lang="ru">Поддержка</span>
+              <span data-lang="en" hidden>Get support</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-layout">
+      <p>&copy; 2026 EmDiSoftware</p>
+      <a class="back-link" href="../">
+        <span data-lang="ru">Вернуться в каталог</span>
+        <span data-lang="en" hidden>Back to catalog</span>
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </footer>
+
+  <script src="../product-v7.js?v=7"></script>
+  <script src="./simplclip.js?v=1"></script>
+</body>
+</html>
