@@ -164,17 +164,10 @@ img { display: block; max-width: 100%; }
 }
 
 .eyebrow {
-  width: fit-content;
-  margin: 0 0 18px;
-  padding: 7px 10px;
-  border: 1px solid color-mix(in srgb, var(--accent) 24%, transparent);
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--accent) 7%, transparent);
-  color: var(--accent);
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: .08em;
-  text-transform: uppercase;
+  margin: 0 0 12px;
+  color: var(--muted, #8fa2b7);
+  font-size: 15px;
+  font-weight: 600;
 }
 
 h1, h2, h3, p { margin-top: 0; }
@@ -230,8 +223,7 @@ h1 {
 
 .button-primary {
   color: #041019;
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  box-shadow: 0 14px 34px color-mix(in srgb, var(--accent) 22%, transparent);
+  background: var(--accent);
 }
 
 .button-secondary {
