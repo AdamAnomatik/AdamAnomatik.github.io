@@ -174,9 +174,10 @@ h1, h2, h3, p { margin-top: 0; }
 
 h1 {
   margin-bottom: 20px;
-  font-size: clamp(54px, 7vw, 88px);
-  line-height: .98;
-  letter-spacing: -.06em;
+  font-size: clamp(42px, 6vw, 72px);
+  line-height: 1.04;
+  letter-spacing: -.03em;
+  overflow-wrap: break-word;
 }
 
 .hero-description {
@@ -361,7 +362,7 @@ h1 {
   .brand span { display: none; }
   .product-hero { padding: 66px 0 74px; }
   .logo-stage { min-height: 300px; border-radius: 22px; }
-  h1 { font-size: clamp(48px, 16vw, 68px); }
+  h1 { font-size: clamp(36px, 11vw, 52px); }
   .hero-description { font-size: 17px; }
   .button-row { display: grid; }
   .button-row .button { width: 100%; }
